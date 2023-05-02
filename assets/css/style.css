@@ -1,0 +1,316 @@
+/* Import Roboto font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* * Styles */
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* Root / Light mode */
+
+:root {
+  --clr-light: #F8F8FF;
+  --clr-dark: #16161D;
+  --clr-accent: #81C443;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+
+  --ff-title: "Roboto", serif;
+  --ff-body: "Assistant", sans-serif;
+}
+
+/* Dark mode */
+
+.darkmode {
+  --clr-light: #F8F8FF;
+  --clr-dark: #16161D;
+  --clr-accent: #81C443;
+
+  --foreground: var(--clr-light);
+  --background: var(--clr-dark);
+}
+
+/* Bodying taking light or dark theme */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--ff-body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* titles */
+
+h1 {
+  font-size: calc(2rem + 6vw);
+  font-family: var(--ff-title);
+  /* margin: 0 0 0.25em; */
+  line-height: 1;
+  color: var(--clr-accent);
+}
+
+h2 {
+  font-size: calc(1.5rem + 3vw);
+  font-family: var(--ff-title);
+  margin: 0 0 0.25em;
+  line-height: 1;
+  color: var(--clr-secondary);
+}
+
+h3 {
+  font-size: calc(1rem + 2.5vw);
+  font-family: var(--ff-title);
+  margin: 0 0 0.25em;
+  line-height: 1;
+  color: var(--clr-accent);
+}
+
+h4 {
+  font-size: calc(0.5rem + 2vw);
+  font-family: var(--ff-title);
+  margin: 0 0 0.25em;
+  line-height: 1;
+  color: var(--clr-secondary);
+}
+
+.subtitle {
+  max-width: 650px;
+}
+
+.accent {
+  color: var(--clr-accent);
+  max-width: 650px;
+}
+
+/* Button */
+
+.btn-group {
+  margin: 2em 0;
+  display: relative;
+}
+
+.btn {
+  padding: 1em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+
+.btn:hover{
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+.btn:active,
+.btn:focus {
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+.btn:target{
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+:target{
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+.btn + .btn {
+  margin-left: 1em;
+}
+
+.btn-secondary {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--foreground);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: var(--foreground) 2px solid;
+  left: -4px;
+  top: 4px;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+
+/* Left content */
+
+.content {
+  height: 100vh;
+  padding: 10em 0;
+  display: grid;
+  grid-template-columns: minmax(2em, 1fr) minmax(80vw, 860px) minmax(2em, 1fr);
+  align-content: center;
+}
+
+.content > * {
+  grid-column: 2 / 3;
+}
+
+/* Right content */
+
+.contentRight {
+  margin: 0px;
+  position: absolute;
+  top: 23.5%;
+  left: 55%;
+}
+
+/* Toggle button */
+
+.dark-mode-toggle {
+  position: absolute;
+  z-index: 1;
+  top: 1em;
+  right: 1em;
+  color: var(--foreground);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 45px;
+  height: 45px;
+}
+
+/* contact */
+
+.contact {
+  margin: 0px;
+  position: static;
+  padding: 25px;
+  /* border: solid #c4aead; */
+  border: solid var(--clr-accent);
+  background: var(--background);
+  display: block;
+  z-index: 1;
+  margin-left: 205px;
+  margin-top: 185px;
+}
+
+.contact i {
+  padding: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-decoration: none;
+  color: var(--clr-accent) !important;
+}
+
+.contact i:hover{
+  transform: translateY(-10px);
+  color: var(--clr-accent) !important;
+}
+
+/* line */
+
+.line {
+  border-left: 6px solid var(--clr-accent);
+  position: absolute;
+  left: 70%;
+  margin-left: -3px;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* shiny text */
+
+:root {  
+  --accent: #81C443;
+  --lighter-green: #B1D456;
+  --darker-green: #099952;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from, to {
+    transform: scale(0);
+  }
+  
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+h1 > .magic {
+  display: inline-block;
+  position: relative;
+}
+
+h1 > .magic > .magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+h1 > .magic > .magic-star > svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+h1 > .magic > .magic-star > svg > path {
+  fill: var(--accent);
+}
+
+h1 > .magic > .magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--accent),
+    var(--lighter-green),
+    var(--darker-green),
+    var(--accent)
+  );
+  background-size: 200%;
+  background-clip: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
